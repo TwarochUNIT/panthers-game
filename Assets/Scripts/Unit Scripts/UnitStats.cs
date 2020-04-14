@@ -12,6 +12,8 @@ public class UnitStats : MonoBehaviour
     public int SecondaryAmmo;
     public int Movement;
     public bool isUnit;
+    public bool Enemy;
+    
 
 
     // Start is called before the first frame update
