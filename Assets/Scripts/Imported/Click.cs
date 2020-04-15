@@ -5,7 +5,9 @@ using UnityEngine;
 public class Click : MonoBehaviour
 {
     [SerializeField]
-    private LayerMask clickablesLayer;
+    public LayerMask clickablesLayer;
+    [SerializeField]
+    public LayerMask Enemy;
     [SerializeField]
     private LayerMask terrainLayer;
     [SerializeField]
@@ -32,6 +34,7 @@ public class Click : MonoBehaviour
     public bool unitSelected;
     [SerializeField]
     public GameObject parent;
+
 
 
 
@@ -68,6 +71,9 @@ public class Click : MonoBehaviour
                             // = selectedObject.parent.gameObject;
 						}
                     }
+                
+
+
         }
         if (Input.GetMouseButtonDown(1) && unitSelected == true)
             {
@@ -91,9 +97,14 @@ public class Click : MonoBehaviour
 
 
                         
-                        //Debug.DrawRay(selectedObject.transform.position.y, moveIndicator.transform.position.y, Color.red);
+                        
 					}
-                //}
+                if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out rayHit, Mathf.Infinity, Enemy))
+                {
+                    Debug.Log("shooting");
+        
+				}
+                
 		    }
             
         }

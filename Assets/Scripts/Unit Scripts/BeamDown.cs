@@ -28,7 +28,7 @@ public class BeamDown : MonoBehaviour
         {
             //print(hit.collider.gameObject.name);
             PositionHex = hit.collider.gameObject;
-            transform.position = new Vector3(PositionHex.transform.position.x, PositionHex.transform.position.y +0.5f, PositionHex.transform.position.z);
+            transform.position = new Vector3(PositionHex.transform.position.x, PositionHex.transform.position.y +0.3f, PositionHex.transform.position.z);
         }
     }
 }
